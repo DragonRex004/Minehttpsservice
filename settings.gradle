@@ -1,0 +1,5 @@
+rootProject.name = 'httpservice'
+include 'core'
+include 'runner'
+include 'api'
+

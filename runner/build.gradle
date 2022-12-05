@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'application'
+}
+
+group 'de.dragonrex.runner'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(project(":api"))
+    implementation(project(":core"))
+
+}
+
+application {
+    manifest {
+        attributes "Main-Class" : "de.dragonrex.runner.MainHttpService"
+    }
+}
+
+tasks {
+    build {
+        dependsOn(shadowJar)
+    }
+}
